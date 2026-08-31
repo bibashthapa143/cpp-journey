@@ -1,0 +1,8 @@
+# Compiled C++ output
+*.exe
+*.out
+*.o
+*.obj
+
+# VS Code
+.vscode/
