@@ -57,6 +57,7 @@ void arraySum(int arr[], int size) {
 
 int main() {
     int choice, num;
+    char again;
 
     do {
         // Menu display
@@ -111,6 +112,23 @@ int main() {
 
             default:
                 cout << "Invalid choice, try again.\n";
+        }
+
+        // After each action (except exit), ask if user wants to continue
+        if (choice != 0) {
+            do {
+                cout << "\nDo you want to do another operation? (y/n): ";
+                cin >> again;
+
+                if (again != 'y' && again != 'Y' && again != 'n' && again != 'N') {
+                    cout << "Invalid input. Please enter 'y' or 'n'.\n";
+                }
+            } while (again != 'y' && again != 'Y' && again != 'n' && again != 'N');
+
+            if (again == 'n' || again == 'N') {
+                cout << "Exiting program. Goodbye!\n";
+                break;   // exit the loop
+            }
         }
 
     } while (choice != 0);
